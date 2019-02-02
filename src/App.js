@@ -1,26 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+// Je fais un import explicite car "Router" existe aussi dans react-router-dom
+import {BrowserRouter, Link} from 'react-router-dom'
+// La en vrai c'est crade, je devrais l'appeller ViewRouter ou un truc comme ca
+import Router from './Router';
 import './App.css';
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter basename={'/'}>
+        <div id="app">
+          <div id="nav">
+            <Link to="/">Home</Link> |
+            <Link to="/about">About</Link>
+          </div>
+          <Router/>
+        </div>
+      </BrowserRouter>
     );
   }
 }
