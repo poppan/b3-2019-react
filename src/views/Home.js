@@ -1,8 +1,13 @@
 import React from 'react';
+import logo from './../assets/logo.svg';
+import HelloWorld from './../components/HelloWorld';
 
-// la c'est incroyab, comme je veux meme pas mettre de tag je met mon texte entre 'quotes'
+// la c'est incroyab, je balance du JSX comme un gros porc (j'ai fait pareil en commentaire dans le router)
 const Home = () => (
-  'T sur la Home'
+  <div className="home">
+    <img src={ logo } alt="logo" />
+    <HelloWorld/>
+  </div>
 )
 
 export default Home;
